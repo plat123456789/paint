@@ -55,7 +55,7 @@
         <a href="#" id="shape2" class="shape-button" title="square">
             <img class="shape-button" src="painter-icon2/png/square.png">
         </a>
-        <a href="#" id="shape3" class="shape-button" title="triangle">
+        <a href="" id="shape3" class="shape-button" title="triangle">
             <img class="shape-button" src="painter-icon2/png/triangle.png">
         </a>
     </div>
@@ -69,19 +69,23 @@
     <script src="drawing-rectangle.js"></script>
     <script src="drawing-line.js"></script>
     <script src="drawing-eraser.js"></script>
+    <script src="clear-all.js"></script>
 
     
     <script type='text/javascript'>
         $('#shape').click(() => {
-            currentFunction = new DrawingRectangle(contextReal, contextDraft);
+            $(".shape-sub-menu").toggle();
         });
         $('#brush').click(() => {
             currentFunction = new DrawingLine(contextReal, contextDraft);
         });
-
         $('#eraser').click(()=> {
             currentFunction = new DrawingEraser(contextReal, contextDraft);
         });
+        $("#clear").click(()=> {
+            alert("Are you sure?");
+        });
+        
     </script>
 
 </body>
