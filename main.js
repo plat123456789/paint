@@ -54,10 +54,3 @@ class PaintFunction{
 
 
 //function for shape sub-menu
-
-let elem = document.getElementById('shape-img');
-elem.onclick = function(){
-    $("shape-sub-menu").toggle();
-};
-
-

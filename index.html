@@ -34,9 +34,25 @@
         <a href="#" id="palette" title="color">
             <img class="painter-button" src="painter-icon2/png/038-palette.png">
         </a>
-        <a href="#" id="shape" title="shape">
+
+        <div id="shape-relative">
+            <a href="#" id="shape" title="shape">
             <img class="painter-button" src="painter-icon2/png/033-ruler-1.png" id="shape-img">
-        </a>
+            </a>
+            
+            <div class="shape-sub-menu">
+                <a href="#" id="shape1" title="circle">
+                    <img class="shape-button" src="painter-icon2/png/circle.png">
+                </a>
+                <a href="#" id="shape2" class="shape-button" title="square">
+                    <img class="shape-button" src="painter-icon2/png/square.png">
+                </a>
+                <a href="#" id="shape3" class="shape-button" title="triangle">
+                    <img class="shape-button" src="painter-icon2/png/triangle.png">
+                </a>
+            </div>
+        </div>
+
         <a href="#" id="undo" title="undo">
             <img class="painter-button" src="painter-icon2/png/left-arrow.png">
         </a>
@@ -48,17 +64,7 @@
         </a>
     </div>
 
-    <div class="shape-sub-menu">
-        <a href="#" id="shape1" title="circle">
-            <img class="shape-button" src="painter-icon2/png/circle.png">
-        </a>
-        <a href="#" id="shape2" class="shape-button" title="square">
-            <img class="shape-button" src="painter-icon2/png/square.png">
-        </a>
-        <a href="" id="shape3" class="shape-button" title="triangle">
-            <img class="shape-button" src="painter-icon2/png/triangle.png">
-        </a>
-    </div>
+
 
 
 
@@ -83,9 +89,19 @@
             currentFunction = new DrawingEraser(contextReal, contextDraft);
         });
         $("#clear").click(()=> {
-            alert("Are you sure?");
+            $(".shape-sub-menu").toggle();
+            $("#shape-img").attr("src","painter-icon2/png/circle.png");
         });
-        
+        $("#shape1").click(()=> {
+            $(".shape-sub-menu").toggle();
+        });
+        $("#shape2").click(()=> {
+            $(".shape-sub-menu").toggle();
+        });
+        $("#shape3").click(()=> {
+            $(".shape-sub-menu").toggle();
+
+        });
     </script>
 
 </body>
