@@ -1,0 +1,14 @@
+http://www.williammalone.com/articles/create-html5-canvas-javascript-drawing-app/
+https://www.html5canvastutorials.com/labs/html5-canvas-paint-application/
+https://www.youtube.com/watch?v=LNaj8I_fsT0
+https://dev.opera.com/articles/html5-canvas-painting/
+https://code.tutsplus.com/tutorials/code-your-own-online-paint-shop-app--net-4801
+
+
+
+view-source:http://www.htmlcanvasstudio.com/
+view-source:http://literallycanvas.com/
+view-source:https://muro.deviantart.com/
+
+for(touch & mouse)
+https://www.codeproject.com/Articles/355230/HTML-Canvas-A-Simple-Paint-Program-Touch-and-Mou

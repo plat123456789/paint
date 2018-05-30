@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+            crossorigin="anonymous">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp"
+            crossorigin="anonymous">
+        <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN"
+            crossorigin="anonymous">
+        <link href="main.css" rel="stylesheet" type='text/css'>
+    </head>
+
+    <title>online painter</title>
+
+</head>
+
+<body>
+
+    <div id="canvas-container">
+        <canvas id="canvas-real" class="canvas" width='1280px' height='720px'></canvas>
+        <canvas id="canvas-draft" class="canvas" width='1280px' height='720px'></canvas>
+    </div>
+    <div class="side-button">
+        <a href="#" id="brush" title="brush">
+            <img class="painter-button" src="painter-icon2/png/049-paintbrush.png">
+        </a>
+        <a href="#" id="eraser" title="eraser">
+            <img class="painter-button" src="painter-icon2/png/027-eraser.png">
+        </a>
+        <a href="#" id="palette" title="color">
+            <img class="painter-button" src="painter-icon2/png/038-palette.png">
+        </a>
+        <a href="#" id="shape" title="shape">
+            <img class="painter-button" src="painter-icon2/png/033-ruler-1.png" id="shape-img">
+        </a>
+        <a href="#" id="undo" title="undo">
+            <img class="painter-button" src="painter-icon2/png/left-arrow.png">
+        </a>
+        <a href="#" id="redo" title="redo">
+            <img class="painter-button" src="painter-icon2/png/right-arrow.png">
+        </a>
+        <a href="" id="clear" title="clear-all">
+            <img class="painter-button" src="painter-icon2/png/043-easel.png">
+        </a>
+    </div>
+
+    <div class="shape-sub-menu">
+        <a href="#" id="shape1" title="circle">
+            <img class="shape-button" src="painter-icon2/png/circle.png">
+        </a>
+        <a href="#" id="shape2" class="shape-button" title="square">
+            <img class="shape-button" src="painter-icon2/png/square.png">
+        </a>
+        <a href="#" id="shape3" class="shape-button" title="triangle">
+            <img class="shape-button" src="painter-icon2/png/triangle.png">
+        </a>
+    </div>
+
+
+
+    <script type='text/javascript' src="https://code.jquery.com/jquery-3.2.1.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+        crossorigin="anonymous"></script>
+    <script src="main.js"></script>
+    <script src="drawing-rectangle.js"></script>
+    <script src="drawing-line.js"></script>
+    <script src="drawing-eraser.js"></script>
+
+    
+    <script type='text/javascript'>
+        $('#shape').click(() => {
+            currentFunction = new DrawingRectangle(contextReal, contextDraft);
+        });
+        $('#brush').click(() => {
+            currentFunction = new DrawingLine(contextReal, contextDraft);
+        });
+
+        $('#eraser').click(()=> {
+            currentFunction = new DrawingEraser(contextReal, contextDraft);
+        });
+    </script>
+
+</body>
