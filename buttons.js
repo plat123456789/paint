@@ -73,6 +73,7 @@ $("#clear").click(() => {
     }
     else{
         event.preventDefault();
+        $(".action-do-sub-menu").toggle();
     }
 });
 
@@ -80,57 +81,46 @@ $("#clear").click(() => {
 $("#straight-line").click(() => {
     $(".line-sub-menu").toggle();
     currentFunction = new DrawingSTline(contextReal, contextDraft);
-    $("#line-img").attr("src", "painter-icon2/png/line.png");
+    $("#line-img").attr("src", "painter-icon2/png/line.png")
 });
 $("#curve").click(() => {
     $(".line-sub-menu").toggle();
     currentFunction = new DrawingCurve(contextReal, contextDraft);
-    $("#line-img").attr("src", "painter-icon2/png/curved-line.png");
+    $("#line-img").attr("src", "painter-icon2/png/curved-line.png")
 });
 
 //the below 3 are the shape sub menu
 $("#circle").click(() => {
     $(".shape-sub-menu").toggle();
     currentFunction = new DrawingCircle(contextReal, contextDraft);
-    $("#shape-img").attr("src", "painter-icon2/png/circle.png");
+    $("#shape-img").attr("src", "painter-icon2/png/circle.png")
 });
 $("#square").click(() => {
     $(".shape-sub-menu").toggle();
     currentFunction = new DrawingRectangle(contextReal, contextDraft);
-    $("#shape-img").attr("src", "painter-icon2/png/square.png");
+    $("#shape-img").attr("src", "painter-icon2/png/square.png")
 });
 $("#triangle").click(() => {
     $(".shape-sub-menu").toggle();
-    $("#shape-img").attr("src", "painter-icon2/png/triangle.png");
+    $("#shape-img").attr("src", "painter-icon2/png/triangle.png")
 });
 
 //the below 3 are the stroke sub menu
 $("#circle-stroke").click(() => {
     $(".stroke-sub-menu").toggle();
     currentFunction = new DrawingCircleStroke(contextReal, contextDraft);
-    $("#stroke-img").attr("src", "painter-icon2/png/circle-stroke.png");
+    $("#stroke-img").attr("src", "painter-icon2/png/circle-stroke.png")
 });
 $("#square-stroke").click(() => {
     $(".stroke-sub-menu").toggle();
     currentFunction = new DrawingRectangleStroke(contextReal, contextDraft);
-    $("#stroke-img").attr("src", "painter-icon2/png/rectangle-stroke.png");
+    $("#stroke-img").attr("src", "painter-icon2/png/rectangle-stroke.png")
 });
 $("#triangle-stroke").click(() => {
     $(".stroke-sub-menu").toggle();
-    $("#stroke-img").attr("src", "painter-icon2/png/triangle-stroke.png");
+    $("#stroke-img").attr("src", "painter-icon2/png/triangle-stroke.png")
 });
 
-
-//the below 3 are the action-do-sub menu
-$("#undo").click(() => {
-    $(".action-do-sub-menu").toggle();
-});
-$("#redo").click(() => {
-    $(".action-do-sub-menu").toggle();
-});
-$("#clear").click(() => {
-    $(".action-do-sub-menu").toggle();
-});
 
 //close all sub-menu when you click the canvas
 $("#canvas-container").click(() => {

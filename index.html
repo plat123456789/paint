@@ -19,21 +19,15 @@
 </head>
 
 <body>
-    <!--top-background-container-->
-    <div id="top-container">
-        <img src="top-resize.png">
+
+    <!--main canvas area-->
+    <div id="canvas-container">
+        <canvas id="canvas-real" class="canvas" width='1280px' height='720px' style="background: url('layer-1.png')"></canvas>
+        <canvas id="canvas-draft" class="canvas" width='1280px' height='720px'></canvas>
     </div>
 
-    <div id="middle-container">
-        <!--main canvas area-->
-        <div id="canvas-container">
-            <canvas id="canvas-real" class="canvas" width='1280px' height='720px'></canvas>
-            <canvas id="canvas-draft" class="canvas" width='1280px' height='720px'></canvas>
-        </div><!--canvas-container-->
-    </div><!--middle container-->
-
     <!--side button div-->
-    <div class="side-button" style="background: url('layer-1.png')">
+    <div class="side-button">
         <a href="#" id="brush" title="brush">
             <img class="painter-button hvr-pulse" src="painter-icon2/png/049-paintbrush.png">
         </a>
@@ -42,7 +36,7 @@
         </a>
 
         <!--color selector button-->
-        <input id="inputColor" type="color" value="#d62020" class="hvr-pulse">
+        <input id="inputColor" type="color" value="#d62020">
 
         <!--line button and sub-menu-->
         <div id="line-relative">
@@ -126,6 +120,9 @@
             <!--sub menu div-->
         </div>
         <!--whole row-->
+
+
+
 
 
         <script type='text/javascript' src="https://code.jquery.com/jquery-3.2.1.js"></script>
