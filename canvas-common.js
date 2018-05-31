@@ -3,6 +3,7 @@ let contextReal = canvasReal.getContext('2d');
 let canvasDraft = document.getElementById('canvas-draft');
 let contextDraft = canvasDraft.getContext('2d');
 let currentFunction;
+let clearFunction;
 let dragging = false;
 
 $('#canvas-draft').mousedown(function(e){
@@ -49,8 +50,4 @@ class PaintFunction{
     onMouseUp(){}
     onMouseLeave(){}
     onMouseEnter(){}
-}
-
-
-
-
+} 

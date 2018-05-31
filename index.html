@@ -20,10 +20,13 @@
 
 <body>
 
+    <!--main canvas area-->
     <div id="canvas-container">
         <canvas id="canvas-real" class="canvas" width='1280px' height='720px'></canvas>
         <canvas id="canvas-draft" class="canvas" width='1280px' height='720px'></canvas>
     </div>
+
+    <!--side button div-->
     <div class="side-button">
         <a href="#" id="brush" title="brush">
             <img class="painter-button" src="painter-icon2/png/049-paintbrush.png">
@@ -31,38 +34,65 @@
         <a href="#" id="eraser" title="eraser">
             <img class="painter-button" src="painter-icon2/png/027-eraser.png">
         </a>
-        <a href="#" id="palette" title="color">
-            <img class="painter-button" src="painter-icon2/png/038-palette.png">
-        </a>
+        <input id="inputColor" type="color">
 
+        <!--shape button and shape sub menu-->
         <div id="shape-relative">
             <a href="#" id="shape" title="shape">
             <img class="painter-button" src="painter-icon2/png/033-ruler-1.png" id="shape-img">
             </a>
             
             <div class="shape-sub-menu">
-                <a href="#" id="shape1" title="circle">
+                <a href="#" id="circle" title="circle">
                     <img class="shape-button" src="painter-icon2/png/circle.png">
                 </a>
-                <a href="#" id="shape2" class="shape-button" title="square">
+                <a href="#" id="square" class="shape-button" title="square">
                     <img class="shape-button" src="painter-icon2/png/square.png">
                 </a>
-                <a href="#" id="shape3" class="shape-button" title="triangle">
+                <a href="#" id="triangle" class="shape-button" title="triangle">
                     <img class="shape-button" src="painter-icon2/png/triangle.png">
                 </a>
-            </div>
-        </div>
+            </div><!--sub menu div-->
+        </div><!--whole row-->
 
-        <a href="#" id="undo" title="undo">
-            <img class="painter-button" src="painter-icon2/png/left-arrow.png">
-        </a>
-        <a href="#" id="redo" title="redo">
-            <img class="painter-button" src="painter-icon2/png/right-arrow.png">
-        </a>
-        <a href="" id="clear" title="clear-all">
-            <img class="painter-button" src="painter-icon2/png/043-easel.png">
-        </a>
-    </div>
+        <!--stroke button and sub menu-->
+        <div id="stroke-relative">
+            <a href="#" id="stroke" title="stroke">
+                <img class="painter-button" src="painter-icon2/png/007-transform.png" id="stroke-img">
+            </a>
+
+            <div class="stroke-sub-menu">
+                <a href="#" id="circle-stroke" title="circle-stroke">
+                    <img class="stroke-button" src="painter-icon2/png/circle-stroke.png">
+                </a>
+                <a href="#" id="square-stroke" title="square-stroke">
+                    <img class="stroke-button" src="painter-icon2/png/rectangle-stroke.png">
+                </a>
+                <a href="#" id="triangle-stroke" title="triangle-stroke">
+                    <img class="stroke-button" src="painter-icon2/png/triangle-stroke.png">
+                </a>
+            </div><!--sub menu div-->
+        </div><!--whole row-->
+
+
+        <!--action.do button adn sub menu-->
+        <div id="action-do-relative">
+            <a href="#" id="action-do" title="action-do">
+                <img class="painter-button" src="painter-icon2/png/tools1.png">
+            </a>
+           
+            <div class="action-do-sub-menu">
+                <a href="#" id="undo" title="undo">
+                    <img class="action-button" src="painter-icon2/png/left-arrow.png">
+                </a>
+                <a href="#" id="redo" title="redo">
+                    <img class="action-button" src="painter-icon2/png/right-arrow.png">
+                </a>
+                <a href="" id="clear" title="clear-all">
+                    <img class="action-button" src="painter-icon2/png/043-easel.png">
+                </a>
+            </div><!--sub menu div-->
+        </div><!--whole row-->
 
 
 
@@ -72,18 +102,34 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
         crossorigin="anonymous"></script>
     <script src="main.js"></script>
-    <script src="drawing-rectangle.js"></script>
-    <script src="drawing-line.js"></script>
-    <script src="drawing-eraser.js"></script>
-    <script src="clear-all.js"></script>
+    <script type='text/javascript' src="drawing-pencil.js"></script>
+    <script type='text/javascript' src="drawing-eraser.js"></script>
+    <script type='text/javascript' src="drawing-rectangle.js"></script>
+    <script type='text/javascript' src="drawing-rectangleStroke.js"></script>
+    <script type='text/javascript' src="drawing-circleStroke.js"></script>
+    <script type='text/javascript' src="drawing-circle.js"></script>
+    <script type='text/javascript' src="drawing-STline.js"></script>
+    <script type='text/javascript' src="drawing-curve.js"></script>
+    <script type='text/javascript' src="drawing-color.js"></script>
 
-    
+
+    <!--all the button on-click function go here-->
     <script type='text/javascript'>
+
+        //the below 3 are the shape, stroke & action button, they all have sub menu
         $('#shape').click(() => {
             $(".shape-sub-menu").toggle();
         });
+        $('#stroke').click(() => {
+            $(".stroke-sub-menu").toggle();
+        });
+        $('#action-do').click(() => {
+            $(".action-do-sub-menu").toggle();
+        });
+
+
         $('#brush').click(() => {
-            currentFunction = new DrawingLine(contextReal, contextDraft);
+            currentFunction = new DrawingPencil(contextReal, contextDraft);
         });
         $('#eraser').click(()=> {
             currentFunction = new DrawingEraser(contextReal, contextDraft);
@@ -91,15 +137,37 @@
         $("#clear").click(()=> {
             alert("are you sure?")
         });
-        $("#shape1").click(()=> {
-            $(".shape-sub-menu").toggle();
-        });
-        $("#shape2").click(()=> {
-            $(".shape-sub-menu").toggle();
-        });
-        $("#shape3").click(()=> {
-            $(".shape-sub-menu").toggle();
 
+        //the below 3 are the shape sub menu
+        $("#circle").click(()=> {
+            $(".shape-sub-menu").toggle();
+            currentFunction = new DrawingCircle(contextReal, contextDraft);
+            $("#shape-img").attr("src","painter-icon2/png/circle.png")
+        });
+        $("#square").click(()=> {
+            $(".shape-sub-menu").toggle();
+            currentFunction = new DrawingRectangle(contextReal, contextDraft);
+            $("#shape-img").attr("src","painter-icon2/png/square.png")
+        });
+        $("#triangle").click(()=> {
+            $(".shape-sub-menu").toggle();
+            $("#shape-img").attr("src","painter-icon2/png/triangle.png")
+        });
+
+        //the below 3 are the stroke sub menu
+        $("#circle-stroke").click(()=> {
+            $(".stroke-sub-menu").toggle();
+            currentFunction = new DrawingCircleStroke(contextReal, contextDraft);
+            $("#stroke-img").attr("src","painter-icon2/png/circle-stroke.png")
+        });
+        $("#square-stroke").click(()=> {
+            $(".stroke-sub-menu").toggle();
+            currentFunction = new DrawingRectangleStroke(contextReal, contextDraft);
+            $("#stroke-img").attr("src","painter-icon2/png/rectangle-stroke.png")
+        });
+        $("#triangle-stroke").click(()=> {
+            $(".stroke-sub-menu").toggle();
+            $("#stroke-img").attr("src","painter-icon2/png/triangle-stroke.png")
         });
     </script>
 

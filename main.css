@@ -19,6 +19,18 @@
     background-color: transparent;
 }
 
+
+/*the color button*/
+#inputColor {
+    width: 90px;
+    height: 30px;
+    color: transparent !important;
+    outline: none;
+    border: 1px solid rgb(152,152,152);
+    border-radius: 20%;
+}
+
+/*side button div*/
 .side-button {
     height: auto; /* Full-height: remove this if you want "auto" height */
     width: 80px; /* Set the width of the sidebar */
@@ -29,17 +41,14 @@
     padding-top: 20px;
 }
 
+/*the button itself*/
 .painter-button {
     height: 60px;
     width: 60px;
     margin: 10px;
 }
 
-.shape-menu {
-    height: auto;
-    width: auto;
-}
-
+/*the below 3 are for shape-sub-menu*/
 .shape-button{
     height: 56px;
     width: 56px;
@@ -52,7 +61,47 @@
 
 .shape-sub-menu {
     position: absolute;
-    top: 0px;
+    top: 10px;
+    left: 80px;
+    width: 200px;
+    display: none;
+}
+
+
+/*the below 3 are for stroke-sub-menu*/
+.stroke-button{
+    height: 56px;
+    width: 56px;
+    margin: 2px;
+}
+
+#stroke-relative {
+    position: relative;
+}
+
+.stroke-sub-menu {
+    position: absolute;
+    top: 10px;
+    left: 80px;
+    width: 200px;
+    display: none;
+}
+
+
+/*the below 3 are for action-do-sub-menu*/
+.action-button{
+    height: 56px;
+    width: 56px;
+    margin: 2px;
+}
+
+#action-do-relative {
+    position: relative;
+}
+
+.action-do-sub-menu {
+    position: absolute;
+    top: 10px;
     left: 80px;
     width: 200px;
     display: none;
