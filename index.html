@@ -22,7 +22,7 @@
 
     <!--main canvas area-->
     <div id="canvas-container">
-        <canvas id="canvas-real" class="canvas" width='1280px' height='720px'></canvas>
+        <canvas id="canvas-real" class="canvas" width='1280px' height='720px' style="background: url('layer-1.png')"></canvas>
         <canvas id="canvas-draft" class="canvas" width='1280px' height='720px'></canvas>
     </div>
 
@@ -140,79 +140,5 @@
         <script type='text/javascript' src="drawing-color.js"></script>
         <script type='text/javascript' src="drawing-STline.js"></script>
         <script type='text/javascript' src="drawing-curve.js"></script>
-
-
-        <!--all the button on-click function go here-->
-        <script type='text/javascript'>
-
-            //the below 4 are for line, shape, stroke & action button, they all have sub menu
-            $('#shape').click(() => {
-                $(".shape-sub-menu").toggle();
-            });
-            $('#stroke').click(() => {
-                $(".stroke-sub-menu").toggle();
-            });
-            $('#action-do').click(() => {
-                $(".action-do-sub-menu").toggle();
-            });
-            $('#line').click(() => {
-                $(".line-sub-menu").toggle();
-            });
-
-            //buttons without sub-menu
-            $('#brush').click(() => {
-                currentFunction = new DrawingPencil(contextReal, contextDraft);
-            });
-            $('#eraser').click(() => {
-                currentFunction = new DrawingEraser(contextReal, contextDraft);
-            });
-            $("#clear").click(() => {
-                alert("are you sure?")
-            });
-
-            //the below 2 are the line sub menu
-            $("#straight-line").click(() => {
-                $(".line-sub-menu").toggle();
-                currentFunction = new DrawingSTline(contextReal, contextDraft);
-                $("#line-img").attr("src", "painter-icon2/png/line.png")
-            });
-            $("#curve").click(() => {
-                $(".line-sub-menu").toggle();
-                currentFunction = new DrawingCurve(contextReal, contextDraft);
-                $("#line-img").attr("src", "painter-icon2/png/curved-line.png")
-            });
-
-            //the below 3 are the shape sub menu
-            $("#circle").click(() => {
-                $(".shape-sub-menu").toggle();
-                currentFunction = new DrawingCircle(contextReal, contextDraft);
-                $("#shape-img").attr("src", "painter-icon2/png/circle.png")
-            });
-            $("#square").click(() => {
-                $(".shape-sub-menu").toggle();
-                currentFunction = new DrawingRectangle(contextReal, contextDraft);
-                $("#shape-img").attr("src", "painter-icon2/png/square.png")
-            });
-            $("#triangle").click(() => {
-                $(".shape-sub-menu").toggle();
-                $("#shape-img").attr("src", "painter-icon2/png/triangle.png")
-            });
-
-            //the below 3 are the stroke sub menu
-            $("#circle-stroke").click(() => {
-                $(".stroke-sub-menu").toggle();
-                currentFunction = new DrawingCircleStroke(contextReal, contextDraft);
-                $("#stroke-img").attr("src", "painter-icon2/png/circle-stroke.png")
-            });
-            $("#square-stroke").click(() => {
-                $(".stroke-sub-menu").toggle();
-                currentFunction = new DrawingRectangleStroke(contextReal, contextDraft);
-                $("#stroke-img").attr("src", "painter-icon2/png/rectangle-stroke.png")
-            });
-            $("#triangle-stroke").click(() => {
-                $(".stroke-sub-menu").toggle();
-                $("#stroke-img").attr("src", "painter-icon2/png/triangle-stroke.png")
-            });
-        </script>
-
+        <script type='text/javascript' src="buttons.js"></script>
 </body>

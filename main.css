@@ -24,16 +24,18 @@
 #inputColor {
     width: 60px;
     height: 60px;
-    padding: 0px;
-    border: 0px;
     margin: 10px;
+    padding:0px;
+    border:0px;
     border-color: red !important;
     cursor: crosshair;
 }
 
-input::-webkit-color-swatch {
-    border: none;
+/*remove the default input padding*/
+input[type="color"]::-webkit-color-swatch-wrapper {
+    padding: 0;
 }
+
 
 /*side button div*/
 .side-button {
