@@ -28,6 +28,7 @@
     border: 0px;
     margin: 10px;
     border-color: red !important;
+    cursor: crosshair;
 }
 
 input::-webkit-color-swatch {
@@ -45,15 +46,42 @@ input::-webkit-color-swatch {
     padding-top: 20px;
 }
 
-/*the button itself*/
+/*the side button*/
 .painter-button {
     height: 60px;
     width: 60px;
     margin: 10px;
 }
 
+/*the below 5 are for line-button-sub-menu*/
+.line-button{
+    margin: 2px;
+}
 
-/*the below 3 are for shape-sub-menu*/
+#straight-line-img {
+    height: 60px;
+    width: 60px;
+}
+
+#curve-img {
+    height: 45px;
+    width: 45px;
+}
+
+#line-relative {
+    position: relative;
+}
+
+.line-sub-menu {
+    position: absolute;
+    top: 10px;
+    left: 80px;
+    width: 200px;
+    display: none;
+}
+
+
+/*the below 3 are for shape-button-sub-menu*/
 .shape-button{
     height: 56px;
     width: 56px;
@@ -73,7 +101,7 @@ input::-webkit-color-swatch {
 }
 
 
-/*the below 3 are for stroke-sub-menu*/
+/*the below 3 are for stroke-button-sub-menu*/
 .stroke-button{
     height: 56px;
     width: 56px;
@@ -93,7 +121,7 @@ input::-webkit-color-swatch {
 }
 
 
-/*the below 3 are for action-do-sub-menu*/
+/*the below 3 are for action-do-button-sub-menu*/
 .action-button{
     height: 56px;
     width: 56px;
@@ -129,3 +157,42 @@ input::-webkit-color-swatch {
 #inputColor:active{
     transform:translateY(5px);
 }
+
+/* button Pulse effect*/
+@-webkit-keyframes hvr-pulse {
+    25% {
+      -webkit-transform: scale(1.1);
+      transform: scale(1.1);
+    }
+    75% {
+      -webkit-transform: scale(0.9);
+      transform: scale(0.9);
+    }
+  }
+  @keyframes hvr-pulse {
+    25% {
+      -webkit-transform: scale(1.1);
+      transform: scale(1.1);
+    }
+    75% {
+      -webkit-transform: scale(0.9);
+      transform: scale(0.9);
+    }
+  }
+  .hvr-pulse {
+    display: inline-block;
+    vertical-align: middle;
+    -webkit-transform: perspective(1px) translateZ(0);
+    transform: perspective(1px) translateZ(0);
+    box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+  }
+  .hvr-pulse:hover, .hvr-pulse:focus, .hvr-pulse:active {
+    -webkit-animation-name: hvr-pulse;
+    animation-name: hvr-pulse;
+    -webkit-animation-duration: 1s;
+    animation-duration: 1s;
+    -webkit-animation-timing-function: linear;
+    animation-timing-function: linear;
+    -webkit-animation-iteration-count: infinite;
+    animation-iteration-count: infinite;
+  }
