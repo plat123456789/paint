@@ -3,9 +3,18 @@
     overflow:hidden;
 }
 
-#canvas-container{
-    height:720px;
-} 
+#top-container {
+    display: flex;
+    justify-content: center;
+}
+
+#middle-container{
+    display: flex;
+    justify-content: center;
+    height: 920px;
+    width: 1600px;
+}
+
 .canvas{
     border:1px black dotted;
     position:absolute;
@@ -39,7 +48,7 @@ input[type="color"]::-webkit-color-swatch-wrapper {
 
 /*side button div*/
 .side-button {
-    height: auto; /* Full-height: remove this if you want "auto" height */
+    height: 721px; /* Full-height: remove this if you want "auto" height */
     width: 80px; /* Set the width of the sidebar */
     position: fixed; /* Fixed Sidebar (stay in place on scroll) */
     z-index: 1; /* Stay on top */
