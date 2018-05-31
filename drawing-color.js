@@ -1,4 +1,4 @@
-let inputColor = "#000000";
+let inputColor = "#ff1919";
 let inputPX = 5;
 
 $("#inputColor").on("input",function(ee){
