@@ -1,24 +1,40 @@
-.body {
+body {
     margin: 0px;
-    overflow:hidden;
+    background: url("./Background.jpg") center center no-repeat;
+    background-size: cover;
+
+}
+
+#background-container{
+    height: 1300px;
+    width: 1436px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: url('board-no-white-word.png') no-repeat center center;
+    background-size: 100% 90%;
+    
 }
 
 #canvas-container{
-    height:720px;
-} 
-.canvas{
-    border:1px black dotted;
-    position:absolute;
+    position: relative
+}
+
+#canvas-draft{
+    position: absolute;
     top:0px;
-    bottom:0px;
+    right:0px;
+    bottom: 0px;
     left:0px;
-    right:0px
+}
+
+.canvas{
+    border:0.5px black dotted;
 }
 
 #canvas-draft{
     background-color: transparent;
 }
-
 
 /*the color button*/
 #inputColor {
@@ -26,8 +42,6 @@
     height: 60px;
     margin: 10px;
     padding:0px;
-    border:0px;
-    border-color: red !important;
     cursor: crosshair;
 }
 
@@ -41,11 +55,11 @@ input[type="color"]::-webkit-color-swatch-wrapper {
 .side-button {
     height: auto; /* Full-height: remove this if you want "auto" height */
     width: 80px; /* Set the width of the sidebar */
-    position: fixed; /* Fixed Sidebar (stay in place on scroll) */
+    position: absolute; /* Fixed Sidebar (stay in place on scroll) */
     z-index: 1; /* Stay on top */
-    top: 0; /* Stay at the top */
-    left: 0;
-    padding-top: 20px;
+    top: 0px; /* Stay at the top */
+    left: 5px;
+    padding-top:10px;
 }
 
 /*the side button*/
@@ -53,6 +67,11 @@ input[type="color"]::-webkit-color-swatch-wrapper {
     height: 60px;
     width: 60px;
     margin: 10px;
+    border-style: dotted;
+    border-width: 2px;
+    border-top: none;
+    border-left: none;
+    border-right: none;
 }
 
 /*the below 5 are for line-button-sub-menu*/
@@ -78,8 +97,12 @@ input[type="color"]::-webkit-color-swatch-wrapper {
     position: absolute;
     top: 10px;
     left: 80px;
-    width: 200px;
+    width: 150px;
     display: none;
+    border-style: dotted;
+    border-left: none;
+    border-top: none;
+    border-width: 2px;
 }
 
 
@@ -100,6 +123,11 @@ input[type="color"]::-webkit-color-swatch-wrapper {
     left: 80px;
     width: 200px;
     display: none;
+    border-color: #858687;
+    border-style: dotted;
+    border-left: none;
+    border-top: none;
+    border-width: 2px;
 }
 
 
@@ -120,8 +148,18 @@ input[type="color"]::-webkit-color-swatch-wrapper {
     left: 80px;
     width: 200px;
     display: none;
+    border-style: dotted;
+    border-left: none;
+    border-top: none;
+    border-width: 2px;
 }
 
+/*width button*/
+#inputWidth{
+    height:55px;
+    width:55px;
+    margin: 5px 10px 5px 10px;
+}
 
 /*the below 3 are for action-do-button-sub-menu*/
 .action-button{
@@ -138,10 +176,17 @@ input[type="color"]::-webkit-color-swatch-wrapper {
     position: absolute;
     top: 10px;
     left: 80px;
-    width: 200px;
+    width: 400px;
     display: none;
+    border-style: dotted;
+    border-left: none;
+    border-top: none;
+    border-width: 2px;
 }
 
+.button:disabled {
+    background-color: red;
+}
 
 /*all button effect*/
 .painter-button:active{

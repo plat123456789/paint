@@ -20,125 +20,143 @@
 
 <body>
 
+    <div id="background-container" style="text-align: center; margin: 0 auto">
+
     <!--main canvas area-->
-    <div id="canvas-container">
-        <canvas id="canvas-real" class="canvas" width='1280px' height='720px' style="background: url('layer-1.png')"></canvas>
-        <canvas id="canvas-draft" class="canvas" width='1280px' height='720px'></canvas>
-    </div>
+        <div id="canvas-container">
+            <canvas id="canvas-real" class="canvas" width='1280px' height='720px' style="background-color: white;"></canvas>
+            <canvas id="canvas-draft" class="canvas" width='1280px' height='720px'></canvas>
 
-    <!--side button div-->
-    <div class="side-button">
-        <a href="#" id="brush" title="brush">
-            <img class="painter-button hvr-pulse" src="painter-icon2/png/049-paintbrush.png">
-        </a>
-        <a href="#" id="eraser" title="eraser">
-            <img class="painter-button hvr-pulse" src="painter-icon2/png/027-eraser.png">
-        </a>
-
-        <!--color selector button-->
-        <input id="inputColor" type="color" value="#d62020">
-
-        <!--line button and sub-menu-->
-        <div id="line-relative">
-            <a href="#" id="line" title="line">
-                <img class="painter-button hvr-pulse" src="painter-icon2/png/vector.png" id="line-img">
-            </a>
-
-            <div class="line-sub-menu">
-                <a href="#" id="straight-line" title="straight-line">
-                    <img class="line-button hvr-pulse" src="painter-icon2/png/line.png" id="straight-line-img">
+            <div class="side-button">
+                <a href="#" id="brush" title="brush">
+                    <img class="painter-button hvr-pulse" src="painter-icon2/png/049-paintbrush.png">
                 </a>
-                <a href="#" id="curve" title="curve">
-                    <img class="line-button hvr-pulse" src="painter-icon2/png/curved-line.png" id="curve-img">
+
+                <a href="#" id="spray" title="spray">
+                    <img class="painter-button hvr-pulse" src="painter-icon2/png/paint-spray.png">
                 </a>
-            </div>
-            <!--sub menu div-->
-        </div>
-        <!--whole row-->
+                
+                <!--line button and sub-menu-->
+                <div id="line-relative">
+                    <a href="#" id="line" title="line">
+                        <img class="painter-button hvr-pulse" src="painter-icon2/png/vector.png" id="line-img">
+                    </a>
+        
+                    <div class="line-sub-menu">
+                        <a href="#" id="straight-line" title="straight-line">
+                            <img class="line-button hvr-pulse" src="painter-icon2/png/line.png" id="straight-line-img">
+                        </a>
+                        <a href="#" id="curve" title="curve">
+                            <img class="line-button hvr-pulse" src="painter-icon2/png/curved-line.png" id="curve-img">
+                        </a>
+                    </div>
+                    <!--sub menu div-->
+                </div>
+                <!--whole row-->
+        
+        
+                <!--shape button and shape sub menu-->
+                <div id="shape-relative">
+                    <a href="#" id="shape" title="shape">
+                        <img class="painter-button hvr-pulse" src="painter-icon2/png/033-ruler-1.png" id="shape-img">
+                    </a>
+        
+                    <div class="shape-sub-menu">
+                        <a href="#" id="circle" title="circle">
+                            <img class="shape-button hvr-pulse" src="painter-icon2/png/circle.png">
+                        </a>
+                        <a href="#" id="square" title="square">
+                            <img class="shape-button hvr-pulse" src="painter-icon2/png/square.png">
+                        </a>
+                        <a href="#" id="triangle" title="triangle">
+                            <img class="shape-button hvr-pulse" src="painter-icon2/png/triangle.png">
+                        </a>
+                    </div>
+                    <!--sub menu div-->
+                </div>
+                <!--whole row-->
+        
+                <!--stroke button and sub menu-->
+                <div id="stroke-relative">
+                    <a href="#" id="stroke" title="stroke">
+                        <img class="painter-button hvr-pulse" src="painter-icon2/png/selection.png" id="stroke-img">
+                    </a>
+        
+                    <div class="stroke-sub-menu">
+                        <a href="#" id="circle-stroke" title="circle-stroke">
+                            <img class="stroke-button hvr-pulse" src="painter-icon2/png/circle-stroke.png">
+                        </a>
+                        <a href="#" id="square-stroke" title="square-stroke">
+                            <img class="stroke-button hvr-pulse" src="painter-icon2/png/rectangle-stroke.png">
+                        </a>
+                        <a href="#" id="triangle-stroke" title="triangle-stroke">
+                            <img class="stroke-button hvr-pulse" src="painter-icon2/png/triangle-stroke.png">
+                        </a>
+                    </div>
+                    <!--sub menu div-->
+                </div>
+                <!--whole row-->
 
-
-        <!--shape button and shape sub menu-->
-        <div id="shape-relative">
-            <a href="#" id="shape" title="shape">
-                <img class="painter-button hvr-pulse" src="painter-icon2/png/033-ruler-1.png" id="shape-img">
-            </a>
-
-            <div class="shape-sub-menu">
-                <a href="#" id="circle" title="circle">
-                    <img class="shape-button hvr-pulse" src="painter-icon2/png/circle.png">
+                <!--eraser-->
+                <a href="#" id="eraser" title="eraser">
+                    <img class="painter-button hvr-pulse" src="painter-icon2/png/027-eraser.png">
                 </a>
-                <a href="#" id="square" title="square">
-                    <img class="shape-button hvr-pulse" src="painter-icon2/png/square.png">
-                </a>
-                <a href="#" id="triangle" title="triangle">
-                    <img class="shape-button hvr-pulse" src="painter-icon2/png/triangle.png">
-                </a>
-            </div>
-            <!--sub menu div-->
-        </div>
-        <!--whole row-->
 
-        <!--stroke button and sub menu-->
-        <div id="stroke-relative">
-            <a href="#" id="stroke" title="stroke">
-                <img class="painter-button hvr-pulse" src="painter-icon2/png/selection.png" id="stroke-img">
-            </a>
+                <!--color selector button-->
+                <input id="inputColor" type="color" value="#d62020" class="hvr-pulse">
 
-            <div class="stroke-sub-menu">
-                <a href="#" id="circle-stroke" title="circle-stroke">
-                    <img class="stroke-button hvr-pulse" src="painter-icon2/png/circle-stroke.png">
-                </a>
-                <a href="#" id="square-stroke" title="square-stroke">
-                    <img class="stroke-button hvr-pulse" src="painter-icon2/png/rectangle-stroke.png">
-                </a>
-                <a href="#" id="triangle-stroke" title="triangle-stroke">
-                    <img class="stroke-button hvr-pulse" src="painter-icon2/png/triangle-stroke.png">
-                </a>
-            </div>
-            <!--sub menu div-->
-        </div>
-        <!--whole row-->
-
-
-        <!--action.do button adn sub menu-->
-        <div id="action-do-relative">
-            <a href="#" id="action-do" title="action-do">
-                <img class="painter-button hvr-pulse" src="painter-icon2/png/tools1.png">
-            </a>
-
-            <div class="action-do-sub-menu">
-                <a href="#" id="undo" title="undo">
-                    <img class="action-button hvr-pulse" src="painter-icon2/png/left-arrow.png">
-                </a>
-                <a href="#" id="redo" title="redo">
-                    <img class="action-button hvr-pulse" src="painter-icon2/png/right-arrow.png">
-                </a>
-                <a href="" id="clear" title="clear-all">
-                    <img class="action-button hvr-pulse" src="painter-icon2/png/043-easel.png">
-                </a>
-            </div>
-            <!--sub menu div-->
-        </div>
-        <!--whole row-->
+                <!--width button-->
+                <input id="inputWidth" type="range" min="1" max="40" value="5">
+        
+                <!--action.do button adn sub menu-->
+                <div id="action-do-relative">
+                    <a href="#" id="action-do" title="action-do">
+                        <img class="painter-button hvr-pulse" src="painter-icon2/png/tools1.png">
+                    </a>
+        
+                    <div class="action-do-sub-menu">
+                        <button type="button" class="button" id="undo">Undo</button>
+                        <a href="#" id="redo" title="redo">
+                            <img class="action-button hvr-pulse" src="painter-icon2/png/right-arrow.png">
+                        </a>
+                        <a href="" id="clear" title="clear-all">
+                            <img class="action-button hvr-pulse" src="painter-icon2/png/043-easel.png">
+                        </a>
+                        <a href="#" id="save" title="save">
+                            <img class="action-button hvr-pulse" src="painter-icon2/png/save.png">
+                        </a>
+                        <a href="#" id="load" title="load">
+                            <img class="action-button hvr-pulse" src="painter-icon2/png/load.png">
+                        </a>
+                        <a href="#" id="download" title="download">
+                            <img class="action-button hvr-pulse" src="painter-icon2/png/download.png">
+                        </a>
+                        
 
 
-
-
+                    </div>
+                    <!--sub menu div-->
+                </div>
+                <!--whole row-->
+    </div><!--side button-->
+ </div><!--whole canvas area-->
 
         <script type='text/javascript' src="https://code.jquery.com/jquery-3.2.1.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
             crossorigin="anonymous"></script>
         <script src="main.js"></script>
-        <script type='text/javascript' src="drawing-pencil.js"></script>
-        <script type='text/javascript' src="drawing-eraser.js"></script>
-        <script type='text/javascript' src="drawing-rectangle.js"></script>
-        <script type='text/javascript' src="drawing-rectangleStroke.js"></script>
-        <script type='text/javascript' src="drawing-circleStroke.js"></script>
-        <script type='text/javascript' src="drawing-circle.js"></script>
-        <script type='text/javascript' src="drawing-STline.js"></script>
-        <script type='text/javascript' src="drawing-curve.js"></script>
-        <script type='text/javascript' src="drawing-color.js"></script>
-        <script type='text/javascript' src="drawing-STline.js"></script>
-        <script type='text/javascript' src="drawing-curve.js"></script>
-        <script type='text/javascript' src="buttons.js"></script>
+        <script type='text/javascript' src="js/drawing-pencil.js"></script>
+        <script type='text/javascript' src="js/drawing-eraser.js"></script>
+        <script type='text/javascript' src="js/drawing-rectangle.js"></script>
+        <script type='text/javascript' src="js/drawing-rectangleStroke.js"></script>
+        <script type='text/javascript' src="js/drawing-circleStroke.js"></script>
+        <script type='text/javascript' src="js/drawing-circle.js"></script>
+        <script type='text/javascript' src="js/drawing-STline.js"></script>
+        <script type='text/javascript' src="js/drawing-curve.js"></script>
+        <script type='text/javascript' src="js/drawing-color.js"></script>
+        <script type='text/javascript' src="js/buttons.js"></script>
+        <script type='text/javascript' src="js/width.js"></script>
+        <script type='text/javascript' src="js/drawing-spray.js"></script>
+        <script type='text/javascript' src="js/drawing-triangle.js"></script>
+        <script type='text/javascript' src="js/drawing-triangleStroke.js"></script>
 </body>
