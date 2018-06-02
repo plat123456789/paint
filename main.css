@@ -62,7 +62,7 @@ input[type="color"]::-webkit-color-swatch-wrapper {
     padding-top:10px;
 }
 
-/*the side button*/
+/*single side button*/
 .painter-button {
     height: 60px;
     width: 60px;
@@ -184,24 +184,19 @@ input[type="color"]::-webkit-color-swatch-wrapper {
     border-width: 2px;
 }
 
-.do-button{
-    margin: 5px;
-    height: 55px;
-    width: 55px;
-    border-radius: 90px;
-    font-size: 10px;
-    text-align: left;
-    background: #FF704D;
-    color: #fafafa;
-    border: 2px dashed #fafafa;
-    box-shadow: 0px 0px 5px 5px #FF704D;
+/*make all photo un-draggable or unp-selectable*/
+
+.painter-button, .line-button, .shape-button, .stroke-button, .action-button{
+    user-select: none;
+    -moz-user-select: none;
+    -webkit-user-drag: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
 }
 
-.button:disabled {
-    background-color: red;
-}
 
-/*all button effect*/
+
+/*click button effect*/
 .painter-button:active{
     transform:translateY(5px);
 }
