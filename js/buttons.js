@@ -368,7 +368,7 @@ $("#redo").click(() => {
 
 //action-do-sub menu
 $("#clear").click(() => {
-    if(confirm("Are you sure")){
+    if(confirm("All unsaved progress will be lost. Are you sure?")){
     }
     else{
         event.preventDefault();
