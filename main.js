@@ -12,7 +12,6 @@ let dragging = false;
 $('#undo').prop('disabled', true);
 $('#redo').prop('disabled', true);
 
-
 $('#canvas-draft').mousedown(function(e){
     let mouseX = e.offsetX;
     let mouseY = e.offsetY;
@@ -26,6 +25,7 @@ $('#canvas-draft').mousemove(function(e){
     if(dragging){
         currentFunction.onDragging([mouseX,mouseY],e);
     }
+    currentFunction.onMouseMove([mouseX,mouseY],e);
 });
 
 $('#canvas-draft').mouseup(function(e){

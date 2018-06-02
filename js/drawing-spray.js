@@ -3,10 +3,10 @@ function getRandomFloat(min, max) {
     return Math.random() * (max - min) + min;
 }
 class DrawingSpray extends PaintFunction{
-    constructor(contextReal){
+    constructor(contextDraft){
         super();
         //this.context = contextReal;            
-        ctx = contextReal;
+        ctx = contextDraft;
     }
     onMouseDown(coord,event){
         ctx.fillStyle = inputColor;

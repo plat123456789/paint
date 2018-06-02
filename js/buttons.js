@@ -123,12 +123,16 @@ $("#triangle-stroke").click(() => {
 
 //the below 6 are the action-do-sub menu
 $("#undo").click(() => {
-    trialSetting.process.undoFunction();
-    $(".action-do-sub-menu").toggle();
+    event.preventDefault();
+    if(trialSetting.process.currentIndex>=1){
+        trialSetting.process.undoFunction();
+    }
 });
 $("#redo").click(() => {
-    trialSetting.process.redoFunction();
-    $(".action-do-sub-menu").toggle();
+    event.preventDefault();
+    if(trialSetting.process.currentIndex>=0&&trialSetting.process.currentIndex<trialSetting.process.arrayImg.length-1){
+        trialSetting.process.redoFunction();
+    }
 });
 $("#clear").click(() => {
     if(confirm("Are you sure")){
