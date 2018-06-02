@@ -96,9 +96,9 @@ let trialSetting = {
     }
 }
 
-//when the page load, default = pencil
+//when the page load, default = eraser
 $(document).ready(function(){
-    currentFunction = new DrawingPencil(contextReal, contextDraft);
+    currentFunction = new DrawingEraser(contextReal, contextDraft);
 })
 
 
